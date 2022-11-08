@@ -20,4 +20,5 @@ browser.find_element(By.ID, "log.login").click()
 browser.find_element(By.ID, "id").clear()
 browser.find_element(By.ID, "id").send_keys("z")
 
-time.sleep(1)
+# html 정보
+print(browser.page_source)
