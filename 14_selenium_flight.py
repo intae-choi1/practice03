@@ -26,7 +26,10 @@ def wait_elem(browser, x_path, delay=10):
     return ret
 
 
+wait_elem(browser, '//*[@id="__next"]/div/div[1]/div[9]/div/div[2]/button[1]').click()
+time.sleep(1)
 browser.find_element(By.XPATH, '//button[text()="가는 날"]').click()
+time.sleep(1)
 browser.find_elements(By.XPATH, '//b[text()="27"]')[0].click()
 time.sleep(0.5)
 browser.find_elements(By.XPATH, '//b[text()="28"]')[1].click()
@@ -42,7 +45,7 @@ browser.find_element(By.XPATH, '//*[@id="__next"]/div/div[1]/div[4]/div/div/butt
 # presence_of_element_located(찾을거, 엘레먼트)가 찾을 엘레먼트가
 # 나올 때 까지 기다려달라
 # 10초가 넘으면 에러가 남
-elem = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div[1]/div[6]/div/div[2]/div[2]/div/button')))
+elem = WebDriverWait(browser, timeout=10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div[1]/div[6]/div/div[2]/div[2]/div/button')))
 elem.click()
 while True:
     a = input()
