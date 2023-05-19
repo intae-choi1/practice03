@@ -40,7 +40,7 @@ element = get_elem(browser, '//*[@id="tab-label-reviews"]')
 browser.execute_script("arguments[0].click();", element)
 
 # 리뷰가 1000건이 나올때 까지 더보기 클릭
-while len(browser.find_elements(By.CSS_SELECTOR, 'div .single-review')) < 1000:
+while len(browser.find_elements(By.CSS_SELECTOR, 'div .single-review')) < 1096:
     element = get_elem(browser, '//*[@id="product-review-main"]/div[2]/div[6]/div/div')
     browser.execute_script("arguments[0].click();", element)
     time.sleep(0.3)
